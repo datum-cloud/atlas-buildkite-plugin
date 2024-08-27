@@ -10,7 +10,7 @@ which atlas || (curl -sSf https://atlasgo.sh | sh -s -- -y)
 # Install jq, if not available
 which jq || (apt-get install jq)
 
-echo Atlas Cloud Token $ATLAS_CLOUD_TOKEN
+echo "Atlas Cloud Token ${ATLAS_CLOUD_TOKEN}"
 
 # Login to atlas 
 atlas login --token "${ATLAS_CLOUD_TOKEN}"
