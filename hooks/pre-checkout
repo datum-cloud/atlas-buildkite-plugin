@@ -10,7 +10,9 @@ which atlas || (curl -sSf https://atlasgo.sh | sh -s -- -y)
 # Install jq, if not available
 which jq || (apt-get install jq)
 
-echo "Atlas Cloud Token ${ATLAS_CLOUD_TOKEN}"
+echo Setting ATLAS_CLOUD_TOKEN...
+export ATLAS_CLOUD_TOKEN=$(buildkite-agent secret get ATLAS_CLOUD_TOKEN)
+echo Done.
 
 # Login to atlas 
 atlas login --token "${ATLAS_CLOUD_TOKEN}"
